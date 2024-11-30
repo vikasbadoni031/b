@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Vikas Badoni</title>
-    <link>http://vikasbadoni031.github.io/b/posts.html</link>
+    <link>https://vikasbadoni031.github.io/b/posts.html</link>
     <description>Recent content in Posts on Vikas Badoni</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 24 Nov 2024 21:24:02 +0530</lastBuildDate>
-    <atom:link href="http://vikasbadoni031.github.io/b/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://vikasbadoni031.github.io/b/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Shell</title>
-      <link>http://vikasbadoni031.github.io/b/posts/shell.html</link>
+      <link>https://vikasbadoni031.github.io/b/posts/shell.html</link>
       <pubDate>Sun, 24 Nov 2024 21:24:02 +0530</pubDate>
-      <guid>http://vikasbadoni031.github.io/b/posts/shell.html</guid>
+      <guid>https://vikasbadoni031.github.io/b/posts/shell.html</guid>
       <description></description>
     </item>
     <item>
       <title>Different Kubernetes interactions using client-go library</title>
-      <link>http://vikasbadoni031.github.io/b/posts/4.html</link>
+      <link>https://vikasbadoni031.github.io/b/posts/4.html</link>
       <pubDate>Sun, 24 Nov 2024 19:23:15 +0530</pubDate>
-      <guid>http://vikasbadoni031.github.io/b/posts/4.html</guid>
+      <guid>https://vikasbadoni031.github.io/b/posts/4.html</guid>
       <description></description>
     </item>
     <item>
       <title>TCP load Balancer using socket programming</title>
-      <link>http://vikasbadoni031.github.io/b/posts/3.html</link>
+      <link>https://vikasbadoni031.github.io/b/posts/3.html</link>
       <pubDate>Sun, 24 Nov 2024 19:23:12 +0530</pubDate>
-      <guid>http://vikasbadoni031.github.io/b/posts/3.html</guid>
+      <guid>https://vikasbadoni031.github.io/b/posts/3.html</guid>
       <description></description>
     </item>
     <item>
       <title>Golang CLI plugin to extend kubectl functionality</title>
-      <link>http://vikasbadoni031.github.io/b/posts/1.html</link>
+      <link>https://vikasbadoni031.github.io/b/posts/1.html</link>
       <pubDate>Wed, 29 Nov 2023 19:23:09 +0530</pubDate>
-      <guid>http://vikasbadoni031.github.io/b/posts/1.html</guid>
+      <guid>https://vikasbadoni031.github.io/b/posts/1.html</guid>
       <description>&lt;ol&gt;&#xA;&lt;li&gt;Golang CLI Application to get CPU, memory stats related to deployment using Cobra package. Takes deployment name as a substring input and lists all deployments with the matching string.&lt;/li&gt;&#xA;&lt;li&gt;Namespace(-n) as a flag input.&lt;/li&gt;&#xA;&lt;li&gt;This is a kubectl plugin, So can be integrated with kubectl.&lt;/li&gt;&#xA;&lt;li&gt;If the deployment doesn&amp;rsquo;t have resources values set it will show the custom message&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Github Code &lt;a href=&#34;https://github.com/vikasbadoni031/golang/tree/main/kubectl-deploystat&#34;&gt;Link&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Kubernetes Operator to scale applications based on custom CRD</title>
-      <link>http://vikasbadoni031.github.io/b/posts/2.html</link>
+      <link>https://vikasbadoni031.github.io/b/posts/2.html</link>
       <pubDate>Wed, 29 Nov 2023 19:23:09 +0530</pubDate>
-      <guid>http://vikasbadoni031.github.io/b/posts/2.html</guid>
+      <guid>https://vikasbadoni031.github.io/b/posts/2.html</guid>
       <description>&lt;ol&gt;&#xA;&lt;li&gt;Golang CLI Application to get CPU, memory stats related to deployment using Cobra package. Takes deployment name as a substring input and lists all deployments with the matching string.&lt;/li&gt;&#xA;&lt;li&gt;Namespace(-n) as a flag input.&lt;/li&gt;&#xA;&lt;li&gt;This is a kubectl plugin, So can be integrated with kubectl.&lt;/li&gt;&#xA;&lt;li&gt;If the deployment doesn&amp;rsquo;t have resources values set it will show the custom messag&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
     </item>
   </channel>
