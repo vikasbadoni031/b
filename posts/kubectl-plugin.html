@@ -57,7 +57,7 @@
   
   
   <meta name="description" content="Extending the functionality of kubectl by creating a custom plugin using the popular Go package, Cobra. Kubernetes offers extensive command-line tools, but sometimes you need additional commands tailored to your specific workflow. By using Go and Cobra, you can easily add your own commands to kubectl, helping with automating repetitive tasks.
-This app is more foucsed on how to use cobra package and it focuses on implemnting a simple usecase of getting the deploymnets based on users input parameter. Based on input this pulls up matching depoloymnet from the cluster and displays requested memory and cpu, &ldquo;None&rdquo; in case no requests are set. This will help to easily identify problmetic deployments in the system. The funtionality can be easily extended to any other types, objects and for custom requiremtes." />
+This app is shows how to use the Cobra package, focusing on implementing a simple use case: retrieving deployments based on user input parameters. Based on the provided input, the app queries the cluster to find matching deployments and displays the requested memory and CPU. If no resource requests are set, it will display &ldquo;None.&rdquo; This functionality helps easily identify problematic deployments within the system. Additionally, the functionality is extensible to support other object types and custom requirements." />
   <meta name="author" content="Vikas Badoni" />
   
 
@@ -120,16 +120,16 @@ This app is more foucsed on how to use cobra package and it focuses on implemnti
   
   <meta itemprop="name" content="Golang CLI plugin to extend kubectl functionality">
   <meta itemprop="description" content="Extending the functionality of kubectl by creating a custom plugin using the popular Go package, Cobra. Kubernetes offers extensive command-line tools, but sometimes you need additional commands tailored to your specific workflow. By using Go and Cobra, you can easily add your own commands to kubectl, helping with automating repetitive tasks.
-This app is more foucsed on how to use cobra package and it focuses on implemnting a simple usecase of getting the deploymnets based on users input parameter. Based on input this pulls up matching depoloymnet from the cluster and displays requested memory and cpu, “None” in case no requests are set. This will help to easily identify problmetic deployments in the system. The funtionality can be easily extended to any other types, objects and for custom requiremtes.">
+This app is shows how to use the Cobra package, focusing on implementing a simple use case: retrieving deployments based on user input parameters. Based on the provided input, the app queries the cluster to find matching deployments and displays the requested memory and CPU. If no resource requests are set, it will display “None.” This functionality helps easily identify problematic deployments within the system. Additionally, the functionality is extensible to support other object types and custom requirements.">
   <meta itemprop="datePublished" content="2024-11-29T19:23:09+05:30">
   <meta itemprop="dateModified" content="2024-11-29T19:23:09+05:30">
-  <meta itemprop="wordCount" content="252">
+  <meta itemprop="wordCount" content="253">
   
   <meta property="og:url" content="https://vikasbadoni031.github.io/b/posts/kubectl-plugin.html">
   <meta property="og:site_name" content="Vikas Badoni">
   <meta property="og:title" content="Golang CLI plugin to extend kubectl functionality">
   <meta property="og:description" content="Extending the functionality of kubectl by creating a custom plugin using the popular Go package, Cobra. Kubernetes offers extensive command-line tools, but sometimes you need additional commands tailored to your specific workflow. By using Go and Cobra, you can easily add your own commands to kubectl, helping with automating repetitive tasks.
-This app is more foucsed on how to use cobra package and it focuses on implemnting a simple usecase of getting the deploymnets based on users input parameter. Based on input this pulls up matching depoloymnet from the cluster and displays requested memory and cpu, “None” in case no requests are set. This will help to easily identify problmetic deployments in the system. The funtionality can be easily extended to any other types, objects and for custom requiremtes.">
+This app is shows how to use the Cobra package, focusing on implementing a simple use case: retrieving deployments based on user input parameters. Based on the provided input, the app queries the cluster to find matching deployments and displays the requested memory and CPU. If no resource requests are set, it will display “None.” This functionality helps easily identify problematic deployments within the system. Additionally, the functionality is extensible to support other object types and custom requirements.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -141,7 +141,7 @@ This app is more foucsed on how to use cobra package and it focuses on implemnti
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Golang CLI plugin to extend kubectl functionality">
   <meta name="twitter:description" content="Extending the functionality of kubectl by creating a custom plugin using the popular Go package, Cobra. Kubernetes offers extensive command-line tools, but sometimes you need additional commands tailored to your specific workflow. By using Go and Cobra, you can easily add your own commands to kubectl, helping with automating repetitive tasks.
-This app is more foucsed on how to use cobra package and it focuses on implemnting a simple usecase of getting the deploymnets based on users input parameter. Based on input this pulls up matching depoloymnet from the cluster and displays requested memory and cpu, “None” in case no requests are set. This will help to easily identify problmetic deployments in the system. The funtionality can be easily extended to any other types, objects and for custom requiremtes.">
+This app is shows how to use the Cobra package, focusing on implementing a simple use case: retrieving deployments based on user input parameters. Based on the provided input, the app queries the cluster to find matching deployments and displays the requested memory and CPU. If no resource requests are set, it will display “None.” This functionality helps easily identify problematic deployments within the system. Additionally, the functionality is extensible to support other object types and custom requirements.">
 
   
   
@@ -245,20 +245,20 @@ This app is more foucsed on how to use cobra package and it focuses on implemnti
   </header>
 
   <section style="font-family: 'Arvo', serif; line-height: 1.6; font-size: 1.125rem;"><p>Extending the functionality of kubectl by creating a custom plugin using the popular Go package, Cobra. Kubernetes offers extensive command-line tools, but sometimes you need additional commands tailored to your specific workflow. By using Go and Cobra, you can easily add your own commands to kubectl, helping with automating repetitive tasks.</p>
-<p>This app is more foucsed on how to use cobra package and it focuses on implemnting a simple usecase of getting the deploymnets based on users input parameter. Based on input this pulls up matching depoloymnet from the cluster and displays requested memory and cpu, &ldquo;None&rdquo; in case no requests are set. This will help to easily identify problmetic deployments in the system. The funtionality can be easily extended to any other types, objects and for custom requiremtes.</p>
+<p>This app is shows how to use the Cobra package, focusing on implementing a simple use case: retrieving deployments based on user input parameters. Based on the provided input, the app queries the cluster to find matching deployments and displays the requested memory and CPU. If no resource requests are set, it will display &ldquo;None.&rdquo; This functionality helps easily identify problematic deployments within the system. Additionally, the functionality is extensible to support other object types and custom requirements.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// packages used
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#e6db74">&#34;k8s.io/client-go/kubernetes&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;k8s.io/client-go/tools/clientcmd&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;github.com/spf13/cobra&#34;</span>
-</span></span></code></pre></div><p>With in app we are using cleintcmd to get the requiored clientset to provide cluster authentication.</p>
+</span></span></code></pre></div><p>With in app we are using clientcmd to get clientset for cluster authentication using kubeconfig file.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">clientset</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">kubernetes</span>.<span style="color:#a6e22e">NewForConfig</span>(<span style="color:#a6e22e">config</span>)
-</span></span></code></pre></div><p>Then use this cleintset to use the List method from DeploymentInterface using AppsV1Interface from the kubernetes client go package.</p>
+</span></span></code></pre></div><p>Then use this clientset to use the List method from DeploymentInterface and AppsV1Interface from the kubernetes client go package.</p>
 <p><a href="https://pkg.go.dev/k8s.io/client-go/kubernetes/typed/apps/v1#AppsV1Interface">https://pkg.go.dev/k8s.io/client-go/kubernetes/typed/apps/v1#AppsV1Interface</a></p>
 <p><a href="https://pkg.go.dev/k8s.io/client-go/kubernetes/typed/apps/v1#DeploymentInterface">https://pkg.go.dev/k8s.io/client-go/kubernetes/typed/apps/v1#DeploymentInterface</a></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">clientset</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">client</span>.<span style="color:#a6e22e">ClientSet</span>()
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">deployments</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">clientset</span>.<span style="color:#a6e22e">AppsV1</span>().<span style="color:#a6e22e">Deployments</span>(<span style="color:#a6e22e">opt</span>.<span style="color:#a6e22e">namespace</span>).<span style="color:#a6e22e">List</span>(<span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">TODO</span>(), <span style="color:#a6e22e">metav1</span>.<span style="color:#a6e22e">ListOptions</span>{})
-</span></span></code></pre></div><p>once we have the deployment details we can loop through them and provide our custom logic to get, modify them. Here we loop through all the containers and get their requests for cpu and memory which is then displayed by the client.</p>
-<p>This app currently takes deploymnet name as a input to macth and -n as a flag for namespace input which defaults to &ldquo;default.</p>
+</span></span></code></pre></div><p>Once we have the deployment details we can loop through them and provide our custom logic to get, modify them. Here we loop through all the containers and get their requests for cpu and memory which is then displayed by the client.</p>
+<p>This utility currently takes deploymnet name as a input to match and -n as a flag for namespace input which defaults to default namespace.</p>
 <p><img src="../images/Deploystat.png" alt="Alt Text"></p>
 <p>Github Code <a href="https://github.com/vikasbadoni031/golang/tree/main/kubectl-deploystat">Link</a></p>
 </section>
