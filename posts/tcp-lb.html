@@ -47,7 +47,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
   
-  <title>TCP load Balancer using socket programming - Vikas Badoni</title>
+  <title>TCP load Balancer using socket programming - Personal Projects</title>
+
 
   
   <meta name="theme-color" />
@@ -56,7 +57,9 @@
   
   
   
-  <meta name="description" content="" />
+  <meta name="description" content="In this project we will be creating a load balancer and a group of backend servers using python socket programming. We will redirect/ load balance the request coming from client to load balancer to the different backend server choosen based on an algorithm.
+For both backend server and load balancer, we first start by initialising the socket. Then bind that socket to a ip address and port pair (This is where the process listens on).
+We then finally start listening for the connection." />
   <meta name="author" content="Vikas Badoni" />
   
 
@@ -118,12 +121,17 @@
   
   
   <meta itemprop="name" content="TCP load Balancer using socket programming">
+  <meta itemprop="description" content="In this project we will be creating a load balancer and a group of backend servers using python socket programming. We will redirect/ load balance the request coming from client to load balancer to the different backend server choosen based on an algorithm.
+For both backend server and load balancer, we first start by initialising the socket. Then bind that socket to a ip address and port pair (This is where the process listens on). We then finally start listening for the connection.">
   <meta itemprop="datePublished" content="2024-09-24T19:23:12+05:30">
   <meta itemprop="dateModified" content="2024-09-24T19:23:12+05:30">
+  <meta itemprop="wordCount" content="272">
   
   <meta property="og:url" content="https://vikasbadoni031.github.io/b/posts/tcp-lb.html">
-  <meta property="og:site_name" content="Vikas Badoni">
+  <meta property="og:site_name" content="Personal Projects">
   <meta property="og:title" content="TCP load Balancer using socket programming">
+  <meta property="og:description" content="In this project we will be creating a load balancer and a group of backend servers using python socket programming. We will redirect/ load balance the request coming from client to load balancer to the different backend server choosen based on an algorithm.
+For both backend server and load balancer, we first start by initialising the socket. Then bind that socket to a ip address and port pair (This is where the process listens on). We then finally start listening for the connection.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -134,6 +142,8 @@
   
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="TCP load Balancer using socket programming">
+  <meta name="twitter:description" content="In this project we will be creating a load balancer and a group of backend servers using python socket programming. We will redirect/ load balance the request coming from client to load balancer to the different backend server choosen based on an algorithm.
+For both backend server and load balancer, we first start by initialising the socket. Then bind that socket to a ip address and port pair (This is where the process listens on). We then finally start listening for the connection.">
 
   
   
@@ -148,7 +158,7 @@
     <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
   <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
     <a class="-translate-y-[1px] text-2xl font-medium" href="https://vikasbadoni031.github.io/b/"
-      >Vikas Badoni
+      >Personal Projects
     </a>
     
   </div>
@@ -236,7 +246,31 @@
     
   </header>
 
-  <section style="font-family: 'Arvo', serif; line-height: 1.6; font-size: 1.125rem;"></section>
+  <section style="font-family: 'Arvo', serif; line-height: 1.6; font-size: 1.125rem;"><p>In this project we will be creating a load balancer and a group of backend servers using python socket programming. We will redirect/ load balance the request coming from client to load balancer to the different backend server choosen based on an algorithm.</p>
+<p>For both backend server and load balancer, we first start by initialising the socket. Then bind that socket to a ip address and port pair (This is where the process listens on).
+We then finally start listening for the connection.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>lb_socket <span style="color:#f92672">=</span> socket<span style="color:#f92672">.</span>socket(socket<span style="color:#f92672">.</span>AF_INET,socket<span style="color:#f92672">.</span>SOCK_STREAM)
+</span></span><span style="display:flex;"><span>lb_add <span style="color:#f92672">=</span> (lb_host, lb_port)
+</span></span><span style="display:flex;"><span>lb_socket<span style="color:#f92672">.</span>bind(lb_add)
+</span></span><span style="display:flex;"><span>lb_socket<span style="color:#f92672">.</span>listen(queue_con)
+</span></span></code></pre></div><p>For each backend server we create separate threads and start listening.</p>
+<p>queue_con variable represents the number of connections that the kernel will keep in the internal queue. Any connection more then the queue length would be rejected at the kernel level.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>lb_socket<span style="color:#f92672">.</span>listen(queue_con)
+</span></span></code></pre></div><p>We use a infinite while loop while picking up connection from these respective queues using accept() method.</p>
+<p>Once the client_socket is created we use recv() method to get the client&rsquo;s data. Response can sent by using sendall() method on the same socket.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>client_data <span style="color:#f92672">=</span> client_socket<span style="color:#f92672">.</span>recv(<span style="color:#ae81ff">2048</span>)<span style="color:#f92672">.</span>decode()
+</span></span><span style="display:flex;"><span>client_socket<span style="color:#f92672">.</span>sendall(response<span style="color:#f92672">.</span>encode())
+</span></span></code></pre></div><p>On the Load balancer side we create separate threads for each client which are connecting, Pass the socket created to the function hadling client&rsquo;s request. Then create a backend socket and choose one of the backend server using the rebalance() function. connect to that backend address and use sendall() to send data to this address. We can then finally write the response returned from this connection back to client socket.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>threading<span style="color:#f92672">.</span>Thread(target<span style="color:#f92672">=</span>server_client, args<span style="color:#f92672">=</span>(client_socket,))<span style="color:#f92672">.</span>start()
+</span></span><span style="display:flex;"><span>client_data <span style="color:#f92672">=</span> client_socket<span style="color:#f92672">.</span>recv(<span style="color:#ae81ff">2048</span>)<span style="color:#f92672">.</span>decode()
+</span></span><span style="display:flex;"><span>backend_add <span style="color:#f92672">=</span> rebalance()
+</span></span><span style="display:flex;"><span>backend_sock<span style="color:#f92672">.</span>connect(backend_add)
+</span></span><span style="display:flex;"><span><span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>client_socket<span style="color:#f92672">.</span>sendall(backend_response)  <span style="color:#75715e">#sending the same reponse to client.</span>
+</span></span></code></pre></div><p>Thank You!</p>
+<p>Github Code <a href="https://github.com/Projects-vb/LoadBalancer/blob/c86e1fbddf1969701402a6503a1ca155f9cab283/LoadBalancerBackend.py">Link</a></p>
+</section>
 
   
   
@@ -249,13 +283,13 @@
     class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
   >
     
-    <a class="ltr:pr-3 rtl:pl-3" href="https://vikasbadoni031.github.io/b/posts/client-go.html"
-      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span style="font-family: 'Arvo', serif; font-size: 16px;">Different Kubernetes interactions using client-go library</span></a
+    <a class="ltr:pr-3 rtl:pl-3" href="https://vikasbadoni031.github.io/b/posts/kube-crd.html"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span style="font-family: 'Arvo', serif; font-size: 16px;">Kubernetes Operator to scale applications based on custom CRD</span></a
     >
     
     
-    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="https://vikasbadoni031.github.io/b/posts/kube-crd.html"
-      ><span style="font-family: 'Arvo', serif; font-size: 16px;">Kubernetes Operator to scale applications based on custom CRD</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="https://vikasbadoni031.github.io/b/posts/kubectl-plugin.html"
+      ><span style="font-family: 'Arvo', serif; font-size: 16px;">Golang CLI plugin to extend kubectl functionality</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
     >
     
   </nav>
