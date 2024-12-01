@@ -13,7 +13,7 @@
       <link>https://vikasbadoni031.github.io/b/posts/kubectl-plugin.html</link>
       <pubDate>Fri, 29 Nov 2024 19:23:09 +0530</pubDate>
       <guid>https://vikasbadoni031.github.io/b/posts/kubectl-plugin.html</guid>
-      <description>&lt;p&gt;Extending the functionality of kubectl by creating a custom plugin using the popular Go package, Cobra. Kubernetes offers extensive command-line tools, but sometimes you need additional commands tailored to your specific workflow. By using Go and Cobra, you can easily add your own commands to kubectl, helping with automating repetitive tasks.&lt;/p&gt;&#xA;&lt;p&gt;This app is shows how to use the Cobra package, focusing on implementing a simple use case: retrieving deployments based on user input parameters. Based on the provided input, the app queries the cluster to find matching deployments and displays the requested memory and CPU. If no resource requests are set, it will display &amp;ldquo;None.&amp;rdquo; This functionality helps easily identify problematic deployments within the system. Additionally, the functionality is extensible to support other object types and custom requirements.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Extending the functionality of kubectl by creating a custom plugin using the popular Go package, Cobra. Kubernetes offers extensive command-line tools, but sometimes you need additional commands tailored to your specific workflow. By using Go and Cobra, you can easily add your own commands to kubectl, helping with automating repetitive tasks.&lt;/p&gt;&#xA;&lt;p&gt;This application shows how to use the Cobra package, focusing on implementing a simple use case: retrieving deployments based on user input parameters. Based on the provided input, the app queries the cluster to find matching deployments and displays the requested memory and CPU. If no resource requests are set, it will display &amp;ldquo;None.&amp;rdquo; This functionality helps easily identify problematic deployments within the system. Additionally, the functionality is extensible to support other object types and custom requirements.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Different Kubernetes interactions using client-go library</title>
@@ -34,14 +34,7 @@
       <link>https://vikasbadoni031.github.io/b/posts/kube-crd.html</link>
       <pubDate>Tue, 29 Aug 2023 19:23:09 +0530</pubDate>
       <guid>https://vikasbadoni031.github.io/b/posts/kube-crd.html</guid>
-      <description>&lt;ol&gt;&#xA;&lt;li&gt;Golang CLI Application to get CPU, memory stats related to deployment using Cobra package. Takes deployment name as a substring input and lists all deployments with the matching string.&lt;/li&gt;&#xA;&lt;li&gt;Namespace(-n) as a flag input.&lt;/li&gt;&#xA;&lt;li&gt;This is a kubectl plugin, So can be integrated with kubectl.&lt;/li&gt;&#xA;&lt;li&gt;If the deployment doesn&amp;rsquo;t have resources values set it will show the custom messag&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
-    </item>
-    <item>
-      <title>Shell</title>
-      <link>https://vikasbadoni031.github.io/b/posts/shell.html</link>
-      <pubDate>Thu, 24 Nov 2022 21:24:02 +0530</pubDate>
-      <guid>https://vikasbadoni031.github.io/b/posts/shell.html</guid>
-      <description></description>
+      <description>&lt;p&gt;Kubernetes Operators are powerful tools that allow you to extend the native functionality of Kubernetes by integrating custom logic into the control plane. You can codify application-specific operational knowledge directly into Kubernetes. Using Operarators you can automate application specific operational tasks.&lt;/p&gt;&#xA;&lt;p&gt;In this project we have created a custom operator from scratch using operator-sdk to create the boilerplate code, defining you own CRD&amp;rsquo;s and then providing the custom logic for reconciling the required objects in the cluster.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
